@@ -63,7 +63,6 @@ const Home = () => {
       <h2 style={numberStyle}>
         {running ? (
           <sup className="animate-spin flex justify-center items-center">
-            {/* Using Material-UI CircularProgress */}
             <CircularProgress size={20} />
           </sup>
         ) : (

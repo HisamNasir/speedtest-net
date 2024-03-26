@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { CircularProgress } from "@mui/material";
 import { FaSpinner } from "react-icons/fa";
 import { Button } from "@mui/material";
+import SpeedTestPage from "./speedtest";
 
 const imageAddr = "/imagetest.jpg";
 const downloadSize = 21403601;
@@ -103,6 +104,7 @@ const Home = () => {
             </Button>
           </div>
         </>
+        <SpeedTestPage />
       </div>
     </div>
   );

@@ -94,7 +94,11 @@ const Home = () => {
                 {counter(result.kbps, "Kbps")}
               </div>
             </div>
-            <Button variant="contained" onClick={runSpeedTest}>
+            <Button
+              className="bg-slate-500"
+              variant="contained"
+              onClick={runSpeedTest}
+            >
               Run Speedtest
             </Button>
           </div>

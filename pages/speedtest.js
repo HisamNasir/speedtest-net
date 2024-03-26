@@ -46,10 +46,12 @@ export default function SpeedTestPage() {
               Ping: {speedTestResult.ping.latency} ms
             </p>
             <p className="text-lg mb-2">
-              Download Speed: {speedTestResult.download.bandwidth} Mbps
+              Download Speed:{" "}
+              {(speedTestResult.download.bandwidth / 1024 / 1024) * 8} Mbps
             </p>
             <p className="text-lg mb-2">
-              Upload Speed: {speedTestResult.upload.bandwidth} Mbps
+              Upload Speed:{" "}
+              {(speedTestResult.upload.bandwidth / 1024 / 1024) * 8} Mbps
             </p>
           </div>
         )}

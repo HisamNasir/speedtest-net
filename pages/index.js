@@ -82,7 +82,9 @@ const Home = () => {
       <div className="flex flex-col items-center justify-center w-screen h-screen">
         <>
           <div className="bg-white p-6 rounded-lg shadow-lg text-center">
-            <h5 className="text-lg font-bold mb-2">Your download speed:</h5>
+            <h5 className="text-lg font-bold mb-2 text-red-500">
+              Image based Speed Test
+            </h5>
             <div>
               <h1 className="text-2xl font-bold mb-1">Download (Mbps)</h1>
               <div className=" font-bold flex justify-center text-blue-500">

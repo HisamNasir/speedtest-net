@@ -1,10 +1,12 @@
+// pages/SpeedTestPage.js
 import React, { useState } from "react";
+import { Button, CircularProgress } from "@mui/material";
 import axios from "axios";
 
 export default function SpeedTestPage() {
+  const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [speedTestResult, setSpeedTestResult] = useState(null);
-  const [error, setError] = useState(null);
 
   const handleRunSpeedTest = async () => {
     setIsLoading(true);
@@ -20,19 +22,39 @@ export default function SpeedTestPage() {
 
   return (
     <div>
-      <h1>Speed Test</h1>
-      <button onClick={handleRunSpeedTest} disabled={isLoading}>
-        {isLoading ? "Running Test..." : "Run Speed Test"}
-      </button>
-      {speedTestResult && (
-        <div>
-          <h2>Speed Test Results</h2>
-          <p>Ping: {speedTestResult.ping} ms</p>
-          <p>Download Speed: {speedTestResult.download} Mbps</p>
-          <p>Upload Speed: {speedTestResult.upload} Mbps</p>
-        </div>
-      )}
-      {error && <p>Error: {error}</p>}
+      <div className="container mx-auto mt-8 bg-white p-6 rounded-lg shadow-lg text-center">
+        <h1 className="text-3xl font-bold mb-4 text-blue-500">
+          {" "}
+          Real Speed Test
+        </h1>
+        <Button
+          className=" bg-slate-500"
+          variant="contained"
+          color="primary"
+          onClick={handleRunSpeedTest}
+          disabled={isLoading}
+          startIcon={
+            isLoading ? <CircularProgress size={20} color="inherit" /> : null
+          }
+        >
+          {isLoading ? "Running Test..." : "Run Speed Test"}
+        </Button>
+        {speedTestResult && (
+          <div>
+            <h2 className="text-2xl font-bold mt-8 mb-4">Speed Test Results</h2>
+            <p className="text-lg mb-2">
+              Ping: {speedTestResult.ping.latency} ms
+            </p>
+            <p className="text-lg mb-2">
+              Download Speed: {speedTestResult.download.bandwidth} Mbps
+            </p>
+            <p className="text-lg mb-2">
+              Upload Speed: {speedTestResult.upload.bandwidth} Mbps
+            </p>
+          </div>
+        )}
+        {error && <p className="text-red-500 mt-4">Error: {error}</p>}
+      </div>
     </div>
   );
 }

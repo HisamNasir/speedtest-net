@@ -1,6 +1,6 @@
 const exec = require("speedtest-net");
 let lastRequestTime = 0;
-const requestInterval = 1000; // limit implemented and waited for while before make it capable of running
+const requestInterval = 1000;
 async function performSpeedTest() {
   const currentTime = Date.now();
   const elapsedTimeSinceLastRequest = currentTime - lastRequestTime;

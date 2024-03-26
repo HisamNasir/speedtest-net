@@ -5,7 +5,7 @@ import { FaSpinner } from "react-icons/fa";
 import { Button } from "@mui/material";
 
 const imageAddr = "/imagetest.jpg";
-const downloadSize = 21403601;
+const downloadSize = 21403696;
 
 const numberStyle = { fontVariantNumeric: "lining-nums" };
 

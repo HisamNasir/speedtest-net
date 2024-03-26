@@ -1,12 +1,22 @@
-import runSpeedTest from "../../lib/speedtestWrapper";
+// pages/api/speedtest.js
+
+import speedTest from "speedtest-net";
 
 export default async function handler(req, res) {
   try {
-    const speedTestResult = await runSpeedTest();
-    console.log("Speedtest result:", speedTestResult);
-    res.status(200).json(speedTestResult);
+    const test = speedTest({ maxTime: 5000 }); // Adjust maxTime as needed
+    test.on("data", (data) => {
+      res
+        .status(200)
+        .json({
+          downloadSpeed: data.speeds.download,
+          uploadSpeed: data.speeds.upload,
+        });
+    });
+    test.on("error", (err) => {
+      res.status(500).json({ error: err.message });
+    });
   } catch (error) {
-    console.error("Error running Speedtest:", error);
     res.status(500).json({ error: error.message });
   }
 }

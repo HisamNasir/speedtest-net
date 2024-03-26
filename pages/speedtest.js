@@ -27,8 +27,8 @@ export default function SpeedTestPage() {
           {" "}
           Real Speed Test
         </h1>
-        <Button
-          className=" bg-slate-500"
+        <button
+          className="p-2 border rounded"
           variant="contained"
           color="primary"
           onClick={handleRunSpeedTest}
@@ -38,7 +38,7 @@ export default function SpeedTestPage() {
           }
         >
           {isLoading ? "Running Test..." : "Run Speed Test"}
-        </Button>
+        </button>
         {speedTestResult && (
           <div>
             <h2 className="text-2xl font-bold mt-8 mb-4">Speed Test Results</h2>

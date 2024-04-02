@@ -22,10 +22,7 @@ export default function SpeedTestPage() {
   return (
     <div>
       <div className="container mx-auto mt-8 bg-white p-6 rounded-lg shadow-lg text-center">
-        <h1 className="text-3xl font-bold mb-4 text-blue-500">
-          {" "}
-          Real Speed Test
-        </h1>
+        <h1 className="text-3xl font-bold mb-4 text-blue-500"> </h1>
         <Button
           className=" bg-slate-500"
           variant="contained"

@@ -17,6 +17,6 @@ export default async function handler(req, res) {
     res.status(200).json(result);
   } catch (error) {
     console.error("Error in test:", error);
-    res.status(500).json({ error: "Speed test failed" });
+    res.status(500).json({ error: "Speed test failed............." });
   }
 }
